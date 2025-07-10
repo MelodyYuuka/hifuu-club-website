@@ -35,7 +35,8 @@
         this.distanceMeter = null;
         this.distanceRan = 0;
 
-        this.highestScore = 0;
+        const savedHighScore = localStorage.getItem('trex_high_score');
+        this.highestScore = savedHighScore ? parseInt(savedHighScore, 10) : 0;
 
         this.time = 0;
         this.runningTime = 0;
@@ -815,6 +816,7 @@
             if (this.distanceRan > this.highestScore) {
                 this.highestScore = Math.ceil(this.distanceRan);
                 this.distanceMeter.setHighScore(this.highestScore);
+                localStorage.setItem('trex_high_score', this.highestScore);
             }
 
             // Reset the time clock.
