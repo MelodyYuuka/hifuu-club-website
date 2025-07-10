@@ -79,6 +79,7 @@
      * @const
      */
     var DEFAULT_WIDTH = 600;
+    var DEBUG_SHOW_COLLISION_BOX = false;
 
     /**
      * Frames per second.
@@ -1599,12 +1600,10 @@
             new CollisionBox(1, 18, 55, 25)
         ],
         RUNNING: [
-            new CollisionBox(22, 0, 17, 16),  // 头
-            new CollisionBox(1, 18, 30, 9),   // 身体上半部
-            new CollisionBox(10, 35, 14, 8),  // 腿
-            new CollisionBox(1, 24, 29, 5),   // 身体下半部
-            new CollisionBox(5, 30, 21, 4),   // 腹部
-            new CollisionBox(9, 34, 15, 4)    // 尾巴
+            new CollisionBox(18, 0, 24, 16),
+            new CollisionBox(19, 18, 20, 9),
+            new CollisionBox(16, 27, 19, 9),
+            new CollisionBox(20, 36, 19, 9),
         ]
     };
 
@@ -1766,6 +1765,23 @@
                     sourceWidth, sourceHeight,
                     this.xPos, this.yPos,
                     this.config.WIDTH, this.config.HEIGHT);
+            }
+
+            if (DEBUG_SHOW_COLLISION_BOX) {
+                var collisionBoxes = this.ducking ?
+                    Trex.collisionBoxes.DUCKING : Trex.collisionBoxes.RUNNING;
+                this.canvasCtx.save();
+                this.canvasCtx.strokeStyle = 'red';
+                for (var i = 0; i < collisionBoxes.length; i++) {
+                    var box = collisionBoxes[i];
+                    this.canvasCtx.strokeRect(
+                        this.xPos + box.x,
+                        this.yPos + box.y,
+                        box.width,
+                        box.height
+                    );
+                }
+                this.canvasCtx.restore();
             }
         },
 
