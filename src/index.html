@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>🐝敬请期待</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: #f8fafc;
+            font-family: 'Open Sans', '微软雅黑', Arial, sans-serif;
+        }
+
+        .coming-soon {
+            text-align: center;
+            color: #444;
+        }
+
+        .coming-soon .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .coming-soon .text {
+            font-size: 2rem;
+            letter-spacing: .2em;
+        }
+
+        .custom-footer {
+            text-align: center;
+            margin: 0;
+            font-family: 'Open Sans', sans-serif;
+            color: #888;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100vw;
+            z-index: 100;
+            border-top: 1px solid #eee;
+            padding: 0.8rem 0 0.6rem 0;
+            box-shadow: 0 -2px 16px 0 rgba(0, 0, 0, 0.03);
+            backdrop-filter: blur(4px);
+            background: none;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2.5em;
+            align-items: center;
+        }
+
+        .footer-links a {
+            color: #888;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.08em;
+            letter-spacing: 0.02em;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 2px;
+            border-radius: 2px;
+            transition: color 0.2s, border-bottom-color 0.2s;
+        }
+
+        .footer-links a:hover,
+        .footer-links a:focus {
+            color: #222;
+            border-bottom-color: #222;
+        }
+
+        .footer-sep {
+            color: #ccc;
+            font-size: 1.2em;
+        }
+
+        .footer-img {
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.15em;
+            margin-right: 0.15em;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="coming-soon">
+        <span class="icon">🐝</span>
+        <span class="text">敬请期待</span>
+
+
+        <footer class="custom-footer">
+            <div class="footer-links">
+                <a href="https://github.com/MelodyYuuka/hifuu-club-website" target="_blank">
+                    <img src="assets/github.svg" alt="GitHub" class="footer-img" />
+                    GitHub</a>
+                <span class="footer-sep">·</span>
+
+                <a href="https://bot.hifuu.club/" target="_blank">
+                    <img src="assets/yuyuko.webp" alt="YuukaBot" class="footer-img" />
+                    YuukaBot</a>
+            </div>
+        </footer>
