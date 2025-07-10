@@ -18,7 +18,7 @@ body {
 }
 
 .icon-offline {
-  content: url(./assets/default_200_percent/200-error-offline.png);
+  content: url(assets/default_200_percent/200-error-offline.png);
   position: relative;
 }
 
