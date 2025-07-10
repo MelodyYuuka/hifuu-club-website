@@ -2,11 +2,12 @@
  * Use of this source code is governed by a BSD-style license that can be
  * found in the LICENSE file. */
 
-html, body {
+html,
+body {
   padding: 0;
   margin: 0;
   width: 100%;
-  height: 100%;
+  height: 90%;
 }
 
 .icon {
@@ -71,9 +72,12 @@ html, body {
 }
 
 @media (max-width: 420px) {
-  .suggested-left > #control-buttons, .suggested-right > #control-buttons {
+
+  .suggested-left>#control-buttons,
+  .suggested-right>#control-buttons {
     float: none;
   }
+
   .snackbar {
     left: 0;
     bottom: 0;
@@ -86,12 +90,15 @@ html, body {
   h1 {
     margin: 0 0 15px;
   }
+
   .icon-offline {
     margin: 0 0 10px;
   }
+
   .interstitial-wrapper {
     margin-top: 5%;
   }
+
   .nav-wrapper {
     margin-top: 30px;
   }
@@ -114,6 +121,7 @@ html, body {
   .offline .interstitial-wrapper {
     margin-bottom: 90px;
   }
+
   .icon-offline {
     margin-bottom: 20px;
   }
@@ -123,6 +131,7 @@ html, body {
   .icon-offline {
     margin-bottom: 0;
   }
+
   .offline .runner-container {
     top: 10px;
   }
@@ -162,4 +171,59 @@ html, body {
   transform-origin: top center;
   transition: transform 250ms cubic-bezier(0.4, 0, 1, 1) 400ms;
   z-index: 2;
+}
+
+.custom-footer {
+  text-align: center;
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  color: #888;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  z-index: 100;
+  border-top: 1px solid #eee;
+  padding: 0.8rem 0 0.6rem 0;
+  box-shadow: 0 -2px 16px 0 rgba(0, 0, 0, 0.03);
+  backdrop-filter: blur(4px);
+  background: none;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 2.5em;
+  align-items: center;
+}
+
+.footer-links a {
+  color: #888;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.08em;
+  letter-spacing: 0.02em;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 2px;
+  border-radius: 2px;
+  transition: color 0.2s, border-bottom-color 0.2s;
+}
+
+.footer-links a:hover,
+.footer-links a:focus {
+  color: #222;
+  border-bottom-color: #222;
+}
+
+.footer-sep {
+  color: #ccc;
+  font-size: 1.2em;
+}
+
+.footer-img {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  margin-right: 0.15em;
+  border-radius: 50%;
 }
