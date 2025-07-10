@@ -374,6 +374,9 @@
             // Distance meter
             this.distanceMeter = new DistanceMeter(this.canvas,
                 this.spriteDef.TEXT_SPRITE, this.dimensions.WIDTH);
+            if (this.highestScore != 0) {
+                this.distanceMeter.setHighScore(this.highestScore);
+            }
 
             // Draw t-rex
             this.tRex = new Trex(this.canvas, this.spriteDef.TREX);
