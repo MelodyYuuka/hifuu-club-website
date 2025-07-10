@@ -1,0 +1,20 @@
+{
+  "name": "hifuu-club",
+  "version": "1.0.0",
+  "main": "build.mjs",
+  "devDependencies": {},
+  "keywords": [],
+  "author": "MelodyYuuka <melody@yunmengdu.cn>",
+  "license": "ISC",
+  "description": "",
+  "scripts": {
+    "build": "node build.mjs"
+  },
+  "dependencies": {
+    "clean-css": "^5.3.3",
+    "fs-extra": "^11.3.0",
+    "globby": "^14.1.0",
+    "html-minifier": "^4.0.0",
+    "terser": "^5.43.1"
+  }
+}
