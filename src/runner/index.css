@@ -8,7 +8,8 @@ body {
   padding: 0;
   margin: 0;
   width: 100%;
-  height: 92%;
+  height: 100vh;
+  overflow-y: hidden;
 }
 
 .icon {
@@ -194,8 +195,9 @@ body {
 .footer-links {
   display: flex;
   justify-content: center;
-  gap: 2.5em;
+  gap: 0.5em 2.5em;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .footer-links a {
@@ -208,6 +210,7 @@ body {
   padding-bottom: 2px;
   border-radius: 2px;
   transition: color 0.2s, border-bottom-color 0.2s;
+  white-space: nowrap;
 }
 
 .footer-links a:hover,
