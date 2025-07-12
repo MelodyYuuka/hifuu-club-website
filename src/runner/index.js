@@ -66,10 +66,16 @@
         this.images = {};
         this.imagesLoaded = 0;
 
+        // 音乐相关属性
+        this.bgm = document.getElementById('bgm');
+        this.musicEnabled = localStorage.getItem('music_enabled') === 'true';
+        this.musicStarted = false;
+
         if (this.isDisabled()) {
             this.setupDisabledRunner();
         } else {
             this.loadImages();
+            this.setupMusicToggle();
         }
     }
     window['Runner'] = Runner;
@@ -243,6 +249,7 @@
             return false;
         },
 
+
         /**
          * For disabled instances, set up a snackbar with the disabled message.
          */
@@ -259,6 +266,116 @@
                     document.querySelector('.icon').classList.add('icon-disabled');
                 }
             }.bind(this));
+        },
+
+        /**
+         * 设置音乐控制按钮
+         */
+        setupMusicToggle: function () {
+            this.musicToggle = document.getElementById('musicToggle');
+            this.musicIcon = this.musicToggle.querySelector('.music-icon');
+            this.musicOnIcon = this.musicToggle.querySelector('.music-on');
+            this.musicOffIcon = this.musicToggle.querySelector('.music-off');
+
+            // 初始状态
+            this.updateMusicIcon();
+
+            // 点击事件
+            this.musicToggle.addEventListener('click', this.toggleMusic.bind(this));
+        },
+
+        /**
+         * 切换音乐开关
+         */
+        toggleMusic: function () {
+            this.musicEnabled = !this.musicEnabled;
+            localStorage.setItem('music_enabled', this.musicEnabled.toString());
+            this.updateMusicIcon();
+
+            if (this.musicEnabled && this.playing && !this.crashed) {
+                // 如果游戏正在进行且音乐开启，直接播放
+                if (!this.musicStarted) {
+                    this.playBGM();
+                } else if (this.bgm.paused) {
+                    // 如果音乐已经开始过但被暂停了，恢复播放
+                    this.resumeBGM();
+                }
+            } else {
+                this.pauseBGM();
+            }
+        },
+
+        /**
+         * 更新音乐图标
+         */
+        updateMusicIcon: function () {
+            if (this.musicEnabled) {
+                this.musicOnIcon.style.display = 'block';
+                this.musicOffIcon.style.display = 'none';
+                this.musicToggle.classList.remove('muted');
+
+                // 如果音乐正在播放，添加播放动画
+                if (this.musicStarted && !this.bgm.paused) {
+                    this.musicToggle.classList.add('playing');
+                } else {
+                    this.musicToggle.classList.remove('playing');
+                }
+            } else {
+                this.musicOnIcon.style.display = 'none';
+                this.musicOffIcon.style.display = 'block';
+                this.musicToggle.classList.add('muted');
+                this.musicToggle.classList.remove('playing');
+            }
+        },
+
+        /**
+         * 播放背景音乐
+         */
+        playBGM: function () {
+            if (this.musicEnabled && this.bgm) {
+                this.bgm.currentTime = 0;
+                this.bgm.play().then(() => {
+                    this.musicStarted = true;
+                    this.updateMusicIcon(); // 更新图标状态以显示动画
+                }).catch(err => {
+                    console.log('音乐播放失败:', err);
+                });
+            }
+        },
+
+        /**
+         * 暂停背景音乐
+         */
+        pauseBGM: function () {
+            if (this.bgm) {
+                this.bgm.pause();
+                this.updateMusicIcon(); // 更新图标状态以隐藏动画
+            }
+        },
+
+        /**
+         * 恢复背景音乐
+         */
+        resumeBGM: function () {
+            if (this.musicEnabled && this.bgm && this.musicStarted) {
+                this.bgm.play().then(() => {
+                    this.updateMusicIcon(); // 更新图标状态以显示动画
+                }).catch(err => {
+                    console.log('音乐恢复失败:', err);
+                });
+            }
+        },
+
+        /**
+         * 停止背景音乐
+         */
+        stopBGM: function () {
+            if (this.bgm) {
+                this.bgm.pause();
+                this.bgm.currentTime = 0;
+                this.musicStarted = false;
+                this.updateMusicIcon();
+            }
         },
 
         /**
@@ -508,6 +625,11 @@
             this.tRex.playingIntro = false;
             this.containerEl.style.webkitAnimation = '';
             this.playCount++;
+
+
+            if (this.musicEnabled) {
+                this.playBGM();
+            }
 
             // Handle tabbing off the page. Pause the current game.
             document.addEventListener(Runner.events.VISIBILITY,
@@ -785,6 +907,8 @@
             this.crashed = true;
             this.distanceMeter.acheivement = false;
 
+            this.stopBGM();
+
             // 手动重绘一帧来确保死亡状态正确显示
             this.clearCanvas();
 
@@ -852,6 +976,7 @@
                 this.distanceRan = 0;
                 this.setSpeed(this.config.SPEED);
                 this.time = getTimeStamp();
+                this.musicStarted = false; // 重置音乐开始状态
                 this.containerEl.classList.remove(Runner.classes.CRASHED);
                 this.clearCanvas();
                 this.distanceMeter.reset(this.highestScore);
@@ -859,6 +984,10 @@
                 this.tRex.reset();
                 this.playSound(this.soundFx.BUTTON_PRESS);
                 this.invert(true);
+                // 如果音乐开关是开启状态，立即播放音乐
+                if (this.musicEnabled) {
+                    this.playBGM();
+                }
                 this.update();
             }
         },
@@ -899,9 +1028,11 @@
             if (document.hidden || document.webkitHidden || e.type == 'blur' ||
                 document.visibilityState != 'visible') {
                 this.stop();
+                this.pauseBGM(); // 暂停音乐
             } else if (!this.crashed) {
                 this.tRex.reset();
                 this.play();
+                this.resumeBGM(); // 恢复音乐
             }
         },
 
