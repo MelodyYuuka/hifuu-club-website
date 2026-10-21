@@ -2,19 +2,23 @@
   "name": "hifuu-club",
   "version": "1.0.0",
   "main": "build.mjs",
-  "devDependencies": {},
+  "devDependencies": {
+    "clean-css": "^5.3.3",
+    "fs-extra": "^11.3.0",
+    "html-minifier-terser": "^7.2.0",
+    "jsqr": "^1.4.0",
+    "terser": "^5.43.1"
+  },
   "keywords": [],
   "author": "MelodyYuuka <melody@yunmengdu.cn>",
   "license": "ISC",
   "description": "",
   "scripts": {
-    "build": "node build.mjs"
+    "build": "node build.mjs",
+    "dev": "node tools/serve.mjs",
+    "test": "node --test tests/*.test.mjs"
   },
-  "dependencies": {
-    "clean-css": "^5.3.3",
-    "fs-extra": "^11.3.0",
-    "globby": "^14.1.0",
-    "html-minifier": "^4.0.0",
-    "terser": "^5.43.1"
+  "engines": {
+    "node": ">=22"
   }
 }

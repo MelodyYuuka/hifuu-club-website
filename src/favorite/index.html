@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#393146">
+  <meta name="description" content="在一次次心动的选择里，找到你的东方 Project 本命角色。自由筛选作品、两两比较、保存专属排名。云梦都 HifuuCraft出品。">
+  <title>东方本命角色测试 · 云梦都 HifuuCraft</title>
+  <link rel="icon" href="../assets/favicon.png">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="preload" as="font" type="font/woff2" href="./assets/fonts/noto-serif-sc.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="./assets/fonts/noto-sans-sc.woff2" crossorigin>
+  <link rel="preload" as="image" href="./assets/characters/001.webp">
+  <link rel="preload" as="image" href="./assets/characters/002.webp">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <svg class="svg-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2 14.7 9.3 22 12l-7.3 2.7L12 22l-2.7-7.3L2 12l7.3-2.7Z"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15M13 5l7 7-7 7"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.6 14.5A9 9 0 0 1 9.5 3.4 9 9 0 1 0 20.6 14.5Z"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></symbol>
+    <symbol id="i-undo" viewBox="0 0 24 24"><path d="M4 4v6h6M4 10a8 8 0 1 1 1 9"/></symbol>
+    <symbol id="i-save" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 8V3H3v13h5"/></symbol>
+  </svg>
+  <header class="site-header">
+    <a class="brand" href="../" aria-label="云梦都 HifuuCraft首页">
+      <img class="brand-logo" src="../assets/favicon.png" alt="" width="43" height="43">
+      <span class="brand-name"><span class="brand-name-cn">云梦都</span> <span class="brand-name-latin">HifuuCraft</span></span>
+    </a>
+    <nav aria-label="主导航">
+      <a class="nav-current" href="./" aria-current="page">本命角色测试</a>
+      <button class="nav-link" type="button" data-open-about>测试说明 <span aria-hidden="true">↗</span></button>
+      <a class="home-link" href="../">返回主站 <span aria-hidden="true">↗</span></a>
+      <a class="github-link" href="https://github.com/MelodyYuuka/hifuu-club-website" target="_blank" rel="noopener noreferrer" aria-label="查看本网站的 GitHub 仓库（新窗口）" title="GitHub 仓库">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.3 3.438 9.8 8.205 11.385.6.11.82-.26.82-.577v-2.234c-3.338.726-4.043-1.416-4.043-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.73.083-.73 1.205.084 1.838 1.237 1.838 1.237 1.07 1.835 2.807 1.305 3.492.998.108-.776.418-1.305.762-1.605-2.665-.305-5.467-1.334-5.467-5.931 0-1.31.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.52 11.52 0 0 1 12 6.3c1.02.005 2.045.138 3.003.404 2.291-1.552 3.297-1.23 3.297-1.23.654 1.652.243 2.873.119 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.431.372.823 1.102.823 2.222v3.293c0 .32.216.694.825.576C20.565 22.297 24 17.8 24 12.5 24 5.87 18.627.5 12 .5Z"/></svg>
+      </a>
+    </nav>
+  </header>
+
+  <main id="main" class="page-shell">
+    <section id="hero" class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        
+        <h1 id="hero-title">在幻想乡，<br>与<span class="title-accent">心之所向</span>相遇。</h1>
+        <p class="hero-description">是初见时的惊鸿一瞥，还是陪伴已久的偏爱？<br>把难以言说的喜欢，交给每一次直觉的选择。</p>
+        <div class="hero-note"><span class="note-line"></span>没有标准答案，只有你的本命。<svg><use href="#i-heart"/></svg></div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="art-disc"></div><span class="art-kanji">縁</span>
+        <span class="art-star star-one">✦</span><span class="art-star star-two">✧</span><span class="art-star star-three">✦</span>
+        <div class="portrait-paper paper-reimu"><img src="./assets/characters/001.webp" width="200" height="300" alt="" fetchpriority="high"><span>博麗 霊夢</span></div>
+        <div class="portrait-paper paper-marisa"><img src="./assets/characters/002.webp" width="200" height="300" alt="" fetchpriority="high"><span>霧雨 魔理沙</span></div>
+        <div class="art-label"><span>好きを、見つけよう。</span></div>
+        <div class="art-caption">少女相遇中 <span>…</span></div>
+      </div>
+    </section>
+
+    <ol class="journey" aria-label="测试步骤">
+      <li class="is-current" data-step="setup"><span>01</span>选择相遇范围</li><li data-step="battle"><span>02</span>听从第一直觉</li><li data-step="result"><span>03</span>收下本命名单</li>
+    </ol>
+
+    <section id="setup-view" aria-labelledby="setup-title">
+      <div id="resume-banner" class="resume-banner" hidden>
+        <svg><use href="#i-moon"/></svg><div><strong>上次的幻想之旅，还在等你。</strong><span id="resume-detail"></span></div><button id="resume-button" class="button button-small" type="button">继续测试 <span aria-hidden="true">→</span></button>
+      </div>
+      <div class="setup-layout">
+        <div class="settings-card">
+          <h2 id="setup-title" class="sr-only" tabindex="-1">测试设置</h2>
+          <div class="field-heading works-heading"><h3>选择作品范围</h3><div class="work-heading-actions"><span id="works-total" role="status">36 个作品条目，任选你的世界</span><button id="reset-settings" type="button" class="text-button">恢复默认</button></div></div>
+          <div class="preset-heading"><span id="preset-label">快捷预设 <small>可多选 · 叠加范围</small></span><button id="clear-work-range" class="text-button" type="button">清空</button></div>
+          <div id="work-presets" class="preset-row" role="group" aria-labelledby="preset-label" aria-describedby="preset-description"></div>
+          <p id="preset-description" class="preset-description" role="status">自定义范围</p>
+          <div class="work-search"><label class="sr-only" for="work-search">搜索作品名或编号</label><input id="work-search" type="search" placeholder="搜索作品名或编号，如 锦上京 / TH20" autocomplete="off"><span id="work-search-count" aria-live="polite"></span></div>
+          <div class="work-tabs" role="tablist" aria-label="作品分类">
+            <button role="tab" id="tab-main" aria-controls="works-main" aria-selected="true" data-tab="main" type="button">正作 <span>15</span></button>
+            <button role="tab" id="tab-other" aria-controls="works-other" aria-selected="false" tabindex="-1" data-tab="other" type="button">外传与秘封 <span>16</span></button>
+            <button role="tab" id="tab-old" aria-controls="works-old" aria-selected="false" tabindex="-1" data-tab="old" type="button">旧作 <span>5</span></button>
+          </div>
+          <div class="work-group-tools"><label><input id="select-work-group" type="checkbox"><span id="select-work-group-label">全选本类</span></label><span id="work-group-count"></span></div>
+          <div id="works-main" class="works-grid" role="tabpanel" aria-labelledby="tab-main"></div>
+          <div id="works-other" class="works-grid" role="tabpanel" aria-labelledby="tab-other" hidden></div>
+          <div id="works-old" class="works-grid" role="tabpanel" aria-labelledby="tab-old" hidden></div>
+          <p id="work-empty" class="empty-note" hidden>本分类没有匹配的作品，试试其他分类或换个关键词。</p>
+          <div class="settings-divider"></div>
+          <fieldset class="ranking-field"><legend>这次，想找到几位心上人？</legend><div class="mode-options">
+            <label class="mode-option"><input type="radio" name="limit" value="1"><span class="mode-top"><svg><use href="#i-heart"/></svg>只找本命</span><small>选出最喜欢的 1 位</small></label>
+            <label class="mode-option"><input type="radio" name="limit" value="10" checked><span class="mode-top"><span class="mode-number">10</span>心动前十<span class="recommend-label">推荐</span></span><small>选出最喜欢的 10 位</small></label>
+            <label class="mode-option"><input type="radio" name="limit" value="all"><span class="mode-top"><span class="mode-number">∞</span>完整排名</span><small>给每一份喜欢排个序</small></label>
+          </div></fieldset>
+          <details id="roster-details" class="roster-details"><summary><span><svg><use href="#i-star"/></svg>想再调整一点？<strong>按角色挑选</strong></span><span class="details-arrow" aria-hidden="true">＋</span></summary><p id="roster-summary" class="roster-note" role="status"></p><div class="roster-tools"><label for="character-search" class="sr-only">搜索角色名字、简介或别名</label><input id="character-search" type="search" placeholder="搜索角色名字、简介或别名…" autocomplete="off"><button id="select-visible" class="text-button" type="button">选中搜索结果</button><button id="exclude-visible" class="text-button" type="button">排除搜索结果</button></div><div id="roster-list" class="roster-list"></div><p id="roster-empty" class="empty-note" hidden>没有找到匹配的角色，试试其他名字或别名吧。</p></details>
+        </div>
+        <aside class="invitation-column">
+          <div class="invitation-card">
+            <div class="invited-count"><strong id="character-count">—</strong><span>位角色<br>等待与你相遇</span></div>
+            <div class="avatar-stack" aria-hidden="true"><img src="./assets/characters/001.webp" alt=""><img src="./assets/characters/002.webp" alt=""><img src="./assets/characters/079.webp" alt=""><img src="./assets/characters/080.webp" alt=""><span>✦</span></div>
+            <div class="invitation-stats"><div><span>本次旅程</span><strong id="ranking-summary">心动前十</strong></div><div><span>预计用时</span><strong id="time-estimate">—</strong></div></div>
+            <p id="comparison-estimate" class="comparison-estimate">正在准备相遇名单…</p>
+            <button id="start-button" class="start-button" type="button" disabled>开始心动之旅 <svg><use href="#i-arrow"/></svg></button>
+            <p id="start-hint" class="start-hint">不必着急，途中可以随时暂停。</p>
+          </div>
+          <p id="storage-warning" class="storage-warning" role="status" hidden></p>
+          <div class="little-note"><span>✧</span><p>比起“谁更受欢迎”，<br>这里更在意“你喜欢谁”。</p></div>
+        </aside>
+      </div>
+      <div class="how-it-works"><div><span>01 /</span><p><strong>选熟悉的角色</strong><small>从喜欢的作品出发，缩小相遇的范围。</small></p></div><div><span>02 /</span><p><strong>跟着感觉走</strong><small>每次选择更喜欢的一位，也可以并列。</small></p></div><div><span>03 /</span><p><strong>收藏你的偏爱</strong><small>生成本命榜单，让这份心动有迹可循。</small></p></div></div>
+    </section>
+
+    <section id="battle-view" class="battle-view" aria-labelledby="battle-title" hidden>
+      <div class="battle-toolbar"><button id="pause-button" class="text-button" type="button">← 稍后继续</button><span class="save-status"><span class="status-dot"></span><span id="save-status">已保存</span></span></div>
+      <div class="battle-heading"><h1 id="battle-title" tabindex="-1">这一刻，你更喜欢谁？</h1><p>没有正确答案。选择更让你心动的那一位。</p></div>
+      <div class="progress-meta"><strong id="battle-number"></strong><span id="battle-progress-text"></span></div><progress id="battle-progress" max="100" value="0" aria-label="测试进度（按比较次数上限估算）"></progress>
+      <div class="battle-arena"><button id="choose-left" class="character-card left-card" type="button" aria-keyshortcuts="ArrowLeft 1"></button><div class="versus" aria-hidden="true"><span>或</span></div><button id="choose-right" class="character-card right-card" type="button" aria-keyshortcuts="ArrowRight 2"></button></div>
+      <div class="battle-actions"><button id="undo-button" class="button button-quiet" type="button" aria-keyshortcuts="Backspace"><svg><use href="#i-undo"/></svg>撤销上一步</button><button id="tie-button" class="button button-tie" type="button" aria-keyshortcuts="ArrowDown 3"><svg><use href="#i-heart"/></svg>难分高下，同样喜欢</button></div>
+      <div class="keyboard-hints"><span><kbd>←</kbd> / <kbd>1</kbd> 左边</span><span><kbd>→</kbd> / <kbd>2</kbd> 右边</span><span><kbd>↓</kbd> / <kbd>3</kbd> 并列</span><span><kbd>⌫</kbd> 撤销</span></div><p class="battle-footnote">“同样喜欢”会保留并列名次；不认识的角色建议在开始前排除。</p>
+      <div id="battle-announcement" class="sr-only" role="status" aria-live="polite"></div>
+    </section>
+
+    <section id="result-view" class="result-view" aria-labelledby="result-title" hidden>
+      <div class="result-heading"><h1 id="result-title" tabindex="-1">原来，心之所向是你。</h1><p id="result-description"></p></div>
+      <div id="winner-card" class="winner-card"></div>
+      <div class="result-actions"><button id="download-result" class="button button-primary" type="button"><svg><use href="#i-save"/></svg>保存结果图</button><button id="copy-result" class="button" type="button"><svg><use href="#i-copy"/></svg>复制榜单</button><button id="share-result" class="button" type="button">分享结果链接 <span aria-hidden="true">↗</span></button></div>
+      <p class="export-note">结果图展示前 20 位角色；复制榜单或分享链接可保留完整排名。</p>
+      <div class="ranking-card"><div class="ranking-heading"><h2>我的心动名单</h2><span id="result-count"></span></div><ol id="ranking-list" class="ranking-list"></ol></div>
+      <div class="result-bottom"><button id="result-undo" class="text-button" type="button">← 撤销最后一次选择</button><button id="restart-button" class="button" type="button">再赴一场相遇 <span aria-hidden="true">↗</span></button></div>
+      <p class="result-note">这不是一份固定的答案，只是此时此刻的喜欢。<br>下一次相遇，也许又会有新的心动。</p>
+    </section>
+    <noscript><div class="noscript-message">本命测试需要 JavaScript 才能进行比较和保存进度，请启用后重新打开此页。</div></noscript>
+  </main>
+
+  <footer class="site-footer">
+    <div><span class="footer-brand">✧ 云梦都 HifuuCraft</span><span>在日常与非日常的边界，记录一点喜欢。</span></div>
+    <div><span>非官方同人页面</span><button type="button" data-open-about>关于测试与素材</button></div>
+    <p>东方 Project © 上海アリス幻樂団 · 图像：dairi / はるか、ZUN</p>
+    <nav class="footer-links" aria-label="相关链接">
+      <a href="https://github.com/MelodyYuuka/hifuu-club-website" target="_blank" rel="noopener noreferrer">
+        <img src="../assets/github.svg" alt="" class="footer-img" width="16" height="16" loading="lazy">
+        <span>GitHub</span>
+      </a>
+      <a href="https://qun.qq.com/qunpro/robot/qunshare?robot_uin=3889001246" target="_blank" rel="noopener noreferrer">
+        <img src="../assets/yuyuko.webp" alt="" class="footer-img" width="16" height="16" loading="lazy">
+        <span>幽幽子</span>
+      </a>
+      <a href="https://pd.qq.com/s/38caijyr5" target="_blank" rel="noopener noreferrer">
+        <img src="../assets/guild_logo.svg" alt="" class="footer-img" width="16" height="16" loading="lazy">
+        <span>QQ频道</span>
+      </a>
+      <a href="https://qm.qq.com/q/kukOXwfbvG" target="_blank" rel="noopener noreferrer">
+        <img src="../assets/minecraft.svg" alt="" class="footer-img" width="16" height="16" loading="lazy">
+        <span>MC服务器</span>
+      </a>
+    </nav>
+  </footer>
+  <dialog id="about-dialog" class="about-dialog" aria-labelledby="about-title"><div class="dialog-header"><button class="dialog-close" type="button" aria-label="关闭说明" data-close-dialog>×</button></div><h2 id="about-title">关于这场心动之旅</h2><h3>不是问卷，是一次偏爱的排序。</h3><p>从你选择的角色中，每次挑选更喜欢的一位。“同样喜欢”会保留并列名次，榜单人数可能因此超过所选名次。</p><p>顺序、心情与当下的直觉都可能影响答案。本测试仅供娱乐，不是性格测量，也不代表角色人气。</p><h3>角色与作品范围</h3><p id="catalog-description"></p><h3>灵感、素材与致谢</h3><p>玩法参考 <a href="http://readalittle.net/sort/" target="_blank" rel="noopener noreferrer">東方キャラソート・MF ↗</a> 与 <a href="https://uzkk.github.io/favorite/" target="_blank" rel="noopener noreferrer">二色幽紫蝶本命测试 ↗</a>。</p><p>东方 Project 及角色版权属于上海アリス幻樂団。本页面为非商业同人作品，非官方出品。立绘作者为 <a href="https://www.pixiv.net/users/4920496" target="_blank" rel="noopener noreferrer">dairi / はるか ↗</a>，使用须遵守作者素材条款。《蓬莱人形》角色图像取自 ZUN 的专辑原图。</p><p>结果图背景：<a href="https://www.pixiv.net/artworks/18696022" target="_blank" rel="noopener noreferrer">C.Z.《あの西行妖の満開なこと》 ↗</a>。</p><div class="credits-links"><a href="https://touhou-project.news/guideline/" target="_blank" rel="noopener noreferrer">东方二次创作指南 ↗</a></div></dialog>
+  <dialog id="confirm-dialog" class="confirm-dialog" aria-labelledby="confirm-title"><h2 id="confirm-title">开始一场新的相遇？</h2><p>新测试会替换上次的测试进度。你也可以取消，继续上次的旅程。</p><div><button id="cancel-new" class="button" type="button">保留进度</button><button id="confirm-new" class="button button-primary" type="button">开始新测试</button></div></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+</body>
+</html>
